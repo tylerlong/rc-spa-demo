@@ -9,17 +9,11 @@ const urlSearchParams = new URLSearchParams(
 );
 const code = urlSearchParams.get('code');
 if (code === null) {
-  const someBytes = randomBytes(32);
-  const codeVerifier = buffer2string(someBytes);
-  localforage.setItem('codeVerifier', codeVerifier).then(() => {
-    // generate login link
-    const loginUrl = platform.loginUrl({
-      redirectUri,
-      code_challenge_method: 'S256',
-      code_challenge: buffer2string(
-        crypto.subtle.digest('SHA-256', someBytes)
-      ),
-    });
+  const loginUrl = platform.loginUrl({
+    redirectUri, 
+    usePKCE: true,
+  });
+  localforage.setItem('codeVerifier', platform.codeVerifier).then(() => {
     const link = document.createElement('a');
     link.href = loginUrl;
     link.innerText = 'Login';
