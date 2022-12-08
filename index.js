@@ -33,11 +33,11 @@ if (code === null) {
 
   // make API call
   platform.get('/restapi/v1.0/account/~/extension/~')
-   .then(r => r.json())
-   .then(ext => {
+  .then(r => r.json())
+  .then(ext => {
       document.write(`<p>Your extension ID is ${ext.id}</p>`);
       // subscription
-      var subscriptions = new RingCentral.Subscriptions({
+      const subscriptions = new RingCentral.Subscriptions({
         sdk: rc
       });
       const subscription = subscriptions.createSubscription();
