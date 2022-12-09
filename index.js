@@ -1,5 +1,6 @@
 import Subscriptions from "@ringcentral/subscriptions";
 import RingCentral from '@ringcentral/sdk'
+import localforage from 'localforage';
 
 const rc = new RingCentral({
   server,
