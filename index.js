@@ -1,4 +1,7 @@
-const rc = new RingCentral.SDK({
+import Subscriptions from "@ringcentral/subscriptions";
+import RingCentral from '@ringcentral/sdk'
+
+const rc = new RingCentral({
   server,
   clientId,
 });
@@ -37,7 +40,7 @@ if (code === null) {
   .then(ext => {
       document.write(`<p>Your extension ID is ${ext.id}</p>`);
       // subscription
-      const subscriptions = new RingCentral.Subscriptions({
+      const subscriptions = new Subscriptions({
         sdk: rc
       });
       const subscription = subscriptions.createSubscription();
