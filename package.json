@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "http-server -c-1"
+    "serve": "parcel -p 8080 index.html"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "parcel": "^2.8.1"
   }
 }
