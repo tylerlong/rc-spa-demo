@@ -706,24 +706,24 @@
     chrome-trace-event "^1.0.2"
     nullthrows "^1.1.1"
 
-"@rc-ex/core@^1.0.1-alpha.0":
-  version "1.0.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@rc-ex/core/-/core-1.0.1-alpha.0.tgz#884a612ff157b2cd79ea4d3bb9186f2c7f3f830a"
-  integrity sha512-uMavk4BO2SYw60HzqfwN9rW12ak6mem0m9X4c9/6Xw2o6+8x/ReQojX+m2VvW2iwzXxX1deCktEGLP535LyjNA==
+"@rc-ex/core@^1.0.2-alpha.0":
+  version "1.0.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@rc-ex/core/-/core-1.0.2-alpha.0.tgz#5442d89f1cc8a6e62a7f978a4d1c14e06f3943a8"
+  integrity sha512-VADxtCL93J7zwHVNDxGFIqsAXHj8vuiAHNWeI+YmrmSCAgJxQKRww6qSSvBirVGjwTv5/f7R9dQbmSLZMXyuzg==
   dependencies:
     "@types/qs" "^6.9.7"
     axios "^1.2.2"
     qs "^6.11.0"
 
-"@rc-ex/rcsdk@^1.0.4-alpha.0":
-  version "1.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/@rc-ex/rcsdk/-/rcsdk-1.0.4-alpha.0.tgz#b7a157c2540855021855d43103e0eab587c39a7f"
-  integrity sha512-ygoTTw9UX6jxwms+SEZa9L4qxPt5R2URtVfYqO9/Y5Gfe44t36X9vJ3jlqxQ9mMhT202qj+zJIcgsD8gIorZ0A==
+"@rc-ex/rcsdk@^1.0.5-alpha.0":
+  version "1.0.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@rc-ex/rcsdk/-/rcsdk-1.0.5-alpha.0.tgz#d393f7f96a142c838e11b85ef92ebeeb668d3820"
+  integrity sha512-j9DmTNEKeC9a8mYuHPdzrVMC27j88SntWGykjtQM61RLE6g42xSaBmurchOmTS0+zCunuM1wiUcbHqfsq1rvkA==
 
-"@rc-ex/ws@^1.0.4-alpha.0":
-  version "1.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-1.0.4-alpha.0.tgz#903840a3f365802507caff6626b479cdfe3c1e38"
-  integrity sha512-08sBeQ3/MQ4n4cRDQWXDUd5n4z0TRs9IkHKQKgGGY9I+KrVxWanNCR5TNMGA+3/mPDSp6ABph15etckRC+WeeA==
+"@rc-ex/ws@^1.0.5-alpha.0":
+  version "1.0.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@rc-ex/ws/-/ws-1.0.5-alpha.0.tgz#7592c9f9edcc6d6ab974fde278fc690547cddf18"
+  integrity sha512-lHmGOWgLabqDjTI0iMzc4sfTiPVltgCQVWtEg6lhU2lHbjYKLbJ9CaAQFQ3UB8Qmbsyg1wdlCSbns5UYlHBslQ==
   dependencies:
     "@types/lodash" "^4.14.191"
     "@types/ws" "^8.5.4"
@@ -743,14 +743,14 @@
     is-plain-object "^2.0.4"
     node-fetch "^2.6.7"
 
-"@ringcentral/subscriptions@0.0.1-master.4077862970.131.0":
-  version "0.0.1-master.4077862970.131.0"
-  resolved "https://registry.yarnpkg.com/@ringcentral/subscriptions/-/subscriptions-0.0.1-master.4077862970.131.0.tgz#64a96daa17fcf2b620cc42c3e1f9d1f49497336f"
-  integrity sha512-qeUwl51SOUqO1PITrtoPr19czzrAK0YKm/3zxdbtpsRFbEfNROfLRAq5sdheafItbyrOZ1KNQQab9LjBBBsS8g==
+"@ringcentral/subscriptions@0.0.1-master.4079103221.135.0":
+  version "0.0.1-master.4079103221.135.0"
+  resolved "https://registry.yarnpkg.com/@ringcentral/subscriptions/-/subscriptions-0.0.1-master.4079103221.135.0.tgz#8972ad5af99f233381b9e378df9f709c2ec1cac8"
+  integrity sha512-LqUEETugzRnk09rM9KHo2hyzCY/1Ut2u2CpO/gMuDjkf0n577XfjDQIpK/yb6fV+2GxZKDnTHJNXFgT9vi/VIw==
   dependencies:
-    "@rc-ex/core" "^1.0.1-alpha.0"
-    "@rc-ex/rcsdk" "^1.0.4-alpha.0"
-    "@rc-ex/ws" "^1.0.4-alpha.0"
+    "@rc-ex/core" "^1.0.2-alpha.0"
+    "@rc-ex/rcsdk" "^1.0.5-alpha.0"
+    "@rc-ex/ws" "^1.0.5-alpha.0"
     wait-for-async "^0.6.0"
 
 "@swc/helpers@^0.4.12":
