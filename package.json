@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@ringcentral/sdk": "^4.7.4",
-    "@ringcentral/subscriptions": "^4.7.4",
+    "@ringcentral/subscriptions": "0.0.1-master.4077862970.131.0",
     "localforage": "^1.10.0"
   },
   "devDependencies": {
