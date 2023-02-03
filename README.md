@@ -11,7 +11,7 @@ No fancy technology is used. Just plain JavaScript and HTML.
 yarn install
 ```
 
-Rename `credentials.sample.js` to `credentials.js` and edit it to specify credentials.
+Edit `credentials.js` to specify credentials.
 
 
 ## Run
