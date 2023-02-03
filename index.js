@@ -42,10 +42,16 @@ if (code === null) {
       });
       const subscription = subscriptions.createSubscription();
       subscription.on(subscription.events.notification, (evt) => {
+        console.log(typeof evt);
         console.log(JSON.stringify(evt, null, 2));
       });
       subscription
-        .setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store'])
+        .setEventFilters([
+          // '/restapi/v1.0/account/~/extension/~/message-store', 
+          '/restapi/v1.0/account/~/presence?detailedTelephonyState=true&sipData=true', 
+          '/restapi/v1.0/glip/posts', 
+          '/restapi/v1.0/account/~/telephony/sessions'
+        ])
         .register()
         .then(() => {
           // trigger a message
