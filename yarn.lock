@@ -743,10 +743,10 @@
     is-plain-object "^2.0.4"
     node-fetch "^2.6.7"
 
-"@ringcentral/subscriptions@0.0.1-master.4079103221.135.0":
-  version "0.0.1-master.4079103221.135.0"
-  resolved "https://registry.yarnpkg.com/@ringcentral/subscriptions/-/subscriptions-0.0.1-master.4079103221.135.0.tgz#8972ad5af99f233381b9e378df9f709c2ec1cac8"
-  integrity sha512-LqUEETugzRnk09rM9KHo2hyzCY/1Ut2u2CpO/gMuDjkf0n577XfjDQIpK/yb6fV+2GxZKDnTHJNXFgT9vi/VIw==
+"@ringcentral/subscriptions@0.0.1-master.4088483534.137.0":
+  version "0.0.1-master.4088483534.137.0"
+  resolved "https://registry.yarnpkg.com/@ringcentral/subscriptions/-/subscriptions-0.0.1-master.4088483534.137.0.tgz#9e32fe16a735c795873d41216a44f5075639d253"
+  integrity sha512-oynnfmG644GUfZ5QQ/+knEgF+RT+DOqx6t8ggu/5+dCIUau1zI+XxEYoPUbSiS+xipK/9y+F69oe8HvfFHee3A==
   dependencies:
     "@rc-ex/core" "^1.0.2-alpha.0"
     "@rc-ex/rcsdk" "^1.0.5-alpha.0"

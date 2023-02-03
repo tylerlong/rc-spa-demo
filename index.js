@@ -47,22 +47,30 @@ if (code === null) {
 
       // first subscription
       const subscription = subscriptions.createSubscription();
-      subscription.on(subscription.events.notification, (evt) => {
-        console.log(JSON.stringify(evt, null, 2));
-      });
+      // subscription.on(subscription.events.notification, (evt) => {
+      //   console.log(JSON.stringify(evt, null, 2));
+      // });
       subscription
-        .setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store'])
+        .setEventFilters([
+          '/restapi/v1.0/account/~/presence?detailedTelephonyState=true&sipData=true', 
+          '/restapi/v1.0/glip/posts', 
+          '/restapi/v1.0/account/~/telephony/sessions'
+        ])
         .register()
         .then(() => {
           console.log('first sub');
+          platform.get('/restapi/v1.0/subscription')
+          .then(r => r.json()).then(subs => {
+            console.log(JSON.stringify(subs, null, 2));
+          })
         });
 
       // second subscription
       const subscription2 = subscriptions.createSubscription();
-      subscription2.on(subscription2.events.notification, (evt) => {
-        console.log(typeof evt);
-        console.log(JSON.stringify(evt, null, 2));
-      });
+      // subscription2.on(subscription2.events.notification, (evt) => {
+      //   console.log(typeof evt);
+      //   console.log(JSON.stringify(evt, null, 2));
+      // });
       subscription2
       .setEventFilters([
         '/restapi/v1.0/account/~/extension/~/message-store', 
@@ -70,13 +78,20 @@ if (code === null) {
       .register()
       .then(() => {
         // trigger a message
-        platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
-          from: {extensionId: ext.id},
-          to: [{extensionId: ext.id}],
-          text: 'Hello world!',
-        });
+        // platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
+        //   from: {extensionId: ext.id},
+        //   to: [{extensionId: ext.id}],
+        //   text: 'Hello world!',
+        // });
         console.log("Created subscription2 with 1 event filter");
       });
+
+      setTimeout(() => {
+        platform.get('/restapi/v1.0/subscription')
+        .then(r => r.json()).then(subs => {
+          console.log(JSON.stringify(subs, null, 2));
+        })
+      }, 10000);
     });
   });
 }
