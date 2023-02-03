@@ -44,6 +44,8 @@ if (code === null) {
       const subscriptions = new Subscriptions({
         sdk: rc
       });
+
+      // first subscription
       const subscription = subscriptions.createSubscription();
       subscription.on(subscription.events.notification, (evt) => {
         console.log(JSON.stringify(evt, null, 2));
@@ -52,13 +54,29 @@ if (code === null) {
         .setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store'])
         .register()
         .then(() => {
-          // trigger a message
-          platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
-            from: {extensionId: ext.id},
-            to: [{extensionId: ext.id}],
-            text: 'Hello world!',
-          });
+          console.log('first sub');
         });
+
+      // second subscription
+      const subscription2 = subscriptions.createSubscription();
+      subscription2.on(subscription2.events.notification, (evt) => {
+        console.log(typeof evt);
+        console.log(JSON.stringify(evt, null, 2));
+      });
+      subscription2
+      .setEventFilters([
+        '/restapi/v1.0/account/~/extension/~/message-store', 
+      ])
+      .register()
+      .then(() => {
+        // trigger a message
+        platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
+          from: {extensionId: ext.id},
+          to: [{extensionId: ext.id}],
+          text: 'Hello world!',
+        });
+        console.log("Created subscription2 with 1 event filter");
+      });
     });
   });
 }
