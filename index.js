@@ -64,20 +64,20 @@ if (code === null) {
         console.log(typeof evt);
         console.log(JSON.stringify(evt, null, 2));
       });
-        subscription2
-        .setEventFilters([
-          '/restapi/v1.0/account/~/extension/~/message-store', 
-        ])
-        .register()
-        .then(() => {
-          // trigger a message
-          platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
-            from: {extensionId: ext.id},
-            to: [{extensionId: ext.id}],
-            text: 'Hello world!',
-          });
-          console.log("Created subscription2 with 1 event filter");
+      subscription2
+      .setEventFilters([
+        '/restapi/v1.0/account/~/extension/~/message-store', 
+      ])
+      .register()
+      .then(() => {
+        // trigger a message
+        platform.post('/restapi/v1.0/account/~/extension/~/company-pager', {
+          from: {extensionId: ext.id},
+          to: [{extensionId: ext.id}],
+          text: 'Hello world!',
         });
+        console.log("Created subscription2 with 1 event filter");
+      });
     });
   });
 }
