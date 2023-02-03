@@ -36,7 +36,8 @@ if (code === null) {
   .then(r => r.json())
   .then(ext => {
       document.write(`<p>Your extension ID is ${ext.id}</p>`);
-      // subscription
+
+      // first subscription
       const subscriptions = new RingCentral.Subscriptions({
         sdk: rc
       });
@@ -47,10 +48,25 @@ if (code === null) {
       });
       subscription
         .setEventFilters([
-          // '/restapi/v1.0/account/~/extension/~/message-store', 
           '/restapi/v1.0/account/~/presence?detailedTelephonyState=true&sipData=true', 
           '/restapi/v1.0/glip/posts', 
           '/restapi/v1.0/account/~/telephony/sessions'
+        ])
+        .register()
+        .then(() => {
+          console.log('Created subscription with 3 event filters');
+        });
+
+
+      // second subscription
+      const subscription2 = subscriptions.createSubscription();
+      subscription2.on(subscription2.events.notification, (evt) => {
+        console.log(typeof evt);
+        console.log(JSON.stringify(evt, null, 2));
+      });
+        subscription2
+        .setEventFilters([
+          '/restapi/v1.0/account/~/extension/~/message-store', 
         ])
         .register()
         .then(() => {
@@ -60,6 +76,7 @@ if (code === null) {
             to: [{extensionId: ext.id}],
             text: 'Hello world!',
           });
+          console.log("Created subscription2 with 1 event filter");
         });
     });
   });
